@@ -1,28 +1,95 @@
-@csrf_exempt
-def Fibonacci_series(Number):
-nterms = int(10)
-n1 = 0
-n2 = 1
-count = 2
-if nterms <= 0:
-   print(2)
-elif nterms == 1:
-   print("Fibonacci")
-   print(n1)
-else:
-   print("Fibonacci")
-   print(n1,",",n2,end=" , ")
-   while count < nterms:
-       nth = n1 + n2
-       print(nth,end=" , ")
-       n1 = n2
-       n2 = nth
-       count += 1
-except Exception as e:
-			exc_type, exc_obj, exc_tb = sys.exc_info()
-			other = sys.exc_info()[0].__name__
-			fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-			errorType = str(exc_type)
-			return JsonResponse({"isError": True, "error":str(e), "errorType":errorType, "function":fname, "line":exc_tb.tb_lineno, "log":log})
-	else:
-		return HttpResponse("<h1>ONLY POST REQUESTS</h1>")
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+		function Mult_01()
+		{
+			document.write("<div class='div1' style='width:800px;height:500px;border: 1px solid green;text-align:left;margin: 0 auto; '>");
+			document.write("<hr>");
+			for(var i=1;i<=9;i++)
+				{
+				  for(var j=1;j<=i;j++)
+					{
+						document.write(j+"*"+i+"="+i*j+"    \t");
+					}
+			        document.writeln("<br>");
+				}
+			document.write("</div>");
+		}
+		function Mult_02()
+		{
+			document.write("<div class='div1' style='width:800px;height:500px;border: 1px solid green;text-align:left;margin: 0 auto; '>");
+			document.write("<hr>");
+			for(var i=9;i>=1;i--)
+				{
+				  for(var j=1;j<=i;j++)
+					{
+						document.write(j+"*"+i+"="+i*j+"    \t");
+					}
+			        document.writeln("<br>");
+				}
+			document.write("</div>");
+		}
+		function Mult_03()
+		{
+			document.write("<div class='div1' style='width:800px;height:500px;border: 1px solid green;text-align:right;margin: 0 auto; '>");
+			document.write("<hr>");
+			for(var i=1;i<=9;i++)
+				{
+				  for(var k=i;k<=9-i;k++)
+					  {
+					  document.write("        \t");
+					  }
+				
+				  for(var j=i;j>=1;j--)
+					{
+						document.write(i+"*"+j+"="+i*j+"    \t");
+					}
+			        document.writeln("<br>");
+				}
+			document.write("</div>");
+		}
+		function Mult_04()
+		{
+			document.write("<div class='div1' style='width:800px;height:500px;border: 1px solid green;text-align:right;margin: 0 auto; '>");
+			document.write("<hr>");
+			for(var i=9;i>=1;i--)
+				{
+				  for(var j=i;j>=1;j--)
+					{
+						document.write(j+"*"+i+"="+i*j+"    ");
+					}
+			      for(var k=9-i;k>=1;k--)
+					  {
+					  document.write("\t");
+			     	  }
+			        document.writeln("<br>");
+				}
+			document.write("</div>");
+		}
+		实现代码如下所示：
+</script>
+<style type="text/css">
+    div{
+        text-align:center;
+        margin: 0 auto;
+       }
+ 
+</style>
+</head>
+<body>
+<div class="div1"></div>
+<div>
+<button οnclick="Mult_01();">表一</button>
+<button οnclick="Mult_02();">表二</button>
+<button οnclick="Mult_03();">表三</button>
+<button οnclick="Mult_04();">表四</button>
+</div>
+</body>
+</html>
+--------------------- 
+版权声明：本文为CSDN博主「suwu150」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/suwu150/article/details/53044614
